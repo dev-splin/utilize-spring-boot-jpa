@@ -17,7 +17,11 @@
    - Packaging : Jar
    - Java : 17
    - Dependencies : `Thymeleaf`, `Spring Web`, `Spring Data JPA`, `H2 Database`, `Lombok`
-2. h2(실습용 데이터베이스) - [링크 클릭](https://h2database.com/)
+2. h2(실습용 데이터베이스) 1.4.200버전 사용 - [링크 클릭](https://h2database.com/)
+   - 데이터베이스 파일 생성 방법
+     - `jdbc:h2:~/jpashop` (최소 한번)
+     - `~/jpashop.mv.db` 파일 생성 확인
+     - 이후 부터는 `jdbc:h2:tcp://localhost/~/jpashop` 이렇게 접속
 
 
 
