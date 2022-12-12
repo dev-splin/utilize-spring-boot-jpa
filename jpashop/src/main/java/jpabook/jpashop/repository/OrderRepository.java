@@ -21,8 +21,12 @@ public class OrderRepository {
         return em.find(Order.class, id);
     }
 
-    public List<Order> findAll() {
-        return em.createQuery("select o from Order o", Order.class)
+    public List<Order> findAll(OrderSearch orderSearch) {
+        return em.createQuery("select o from Order o join o.member m" +
+                        " where o.orderStatus = :status" +
+                        " and m.username like :name", Order.class)
+                .setParameter("status", orderSearch.getOrderStatus())
+                .setParameter("name", orderSearch.getUserName())
                 .getResultList();
     }
 }
